@@ -370,7 +370,7 @@ align-items: center;
   line-height: 25px;
 }
 
-.contact-grid p, li {
+.contact-grid p, .contact-grid li {
   color: #F5F5F5;
 }
 
