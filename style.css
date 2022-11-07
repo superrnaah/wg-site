@@ -436,6 +436,9 @@ i {
   color: #FFA327;
 }
 
+.showcase {
+  display: none;
+}
 
 /* MOBILE BREAKS */
 
@@ -503,7 +506,7 @@ i {
 
 .showcase.active {
   left: 350px;
-  width: 50%;
+  width: 70%;
 }
 
 
