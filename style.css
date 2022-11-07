@@ -101,10 +101,8 @@ display: block;
 
 hr {
   color: #FFA327;
-  margin-left: 555px;
-  margin-right: 555px;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  width: clamp(250px,60vw,850px);
+  margin: 35px auto;
 }
 
 .about p {
@@ -465,10 +463,10 @@ i {
 @media(max-width: 708px) {
 
 .toggle {
-  position: absolute;
+  position: fixed;
   width: clamp(10px,10.6vw,60px);
   height: clamp(10px,10.6vw,60px);
-  background: url(https://i.ibb.co/HrfVRcx/menu.png);
+  background: url(menu.png);
   background-repeat: no-repeat;
   background-size: 35px;
   background-position: center;
@@ -476,17 +474,59 @@ i {
   right: 0;
   top: 0;
   margin: 20px;
+  z-index: 2;
+  transition: .2s;
 }
 
 .toggle.active {
-  background: url(https://i.ibb.co/rt3HybH/close.png);
+  background: url(close.png);
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
+  
 }
+
+.showcase {
+  position: fixed;
+  width: 50%;
+  height: 100vh;
+  color: white;
+  background: aliceblue;
+  right: -25em;
+  display: flex;
+  z-index: 1;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.5s;
+
+}
+
+.showcase.active {
+  left: 350px;
+  width: 50%;
+}
+
 
 .nav-list{
   display: none;
+}
+
+.nav-list-mobile {
+  position: relative;
+  display: grid;
+  list-style-type: none;
+  text-align: right;
+  text-transform: uppercase;
+  font-size: 2em;
+  padding: 2em 2em;
+  bottom: 8em;
+  line-height: 1.5em;
+  color: #FFA327;
+  
+}
+
+.nav-list-mobile li:hover {
+  color: #2C3E50;
 }
 
 .about-section {
