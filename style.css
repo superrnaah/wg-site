@@ -477,7 +477,7 @@ i {
   right: 0;
   top: 0;
   margin: 20px;
-  z-index: 2;
+  z-index: 3;
   transition: .2s;
 }
 
@@ -491,22 +491,23 @@ i {
 
 .showcase {
   position: fixed;
-  width: 50%;
   height: 100vh;
   color: white;
   background: aliceblue;
+  opacity: .9;
   right: -25em;
   display: flex;
-  z-index: 1;
+  z-index: 2;
   justify-content: space-between;
   align-items: center;
   transition: 0.5s;
-
 }
 
 .showcase.active {
-  left: 350px;
-  width: 70%;
+  right: 1px;
+  width: clamp(150px,90vw,350px);
+  font-size: clamp(.5rem, 60vw,.8rem);
+  margin: 0 auto;
 }
 
 
