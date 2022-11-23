@@ -1,3 +1,5 @@
+// mobile nav
+
 const menuToggle = document.querySelector ('.toggle')
         const showcase = document.querySelector ('.showcase')
 
@@ -12,3 +14,19 @@ const menuToggle = document.querySelector ('.toggle')
                 menuToggle.classList.remove("active");
                 showcase.classList.remove("active");
             }))
+
+
+// Div appear on scroll
+
+topBtn = document.getElementById("topBtn");
+
+var myScrollFunc = function () {
+    var y = window.scrollY;
+    if (y >= 800) {
+        topBtn.className = "scroll-btn show"
+    } else {
+        topBtn.className = "scroll-btn hide"
+    }
+};
+
+window.addEventListener("scroll", myScrollFunc);

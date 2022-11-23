@@ -49,9 +49,9 @@ a:visited, a:link {
     cursor: pointer;
     list-style: none;
     padding: 6px;
-    bottom: 32px;
+    bottom: 40px;
     position: relative;
-    width: 41%;
+    width: 91%;
     margin: 0 auto;
   }
 
@@ -61,13 +61,66 @@ a:visited, a:link {
 
   
 
+.scroll-btn {
+  top: 0;
+  right: 0;
+  margin: 25px;
+  position:fixed;
+  height: 45px;
+  width: 45px;
+  background-color: #FFA327;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  z-index: 6;
+  border: none;
+  transition: all 1s;
+}
+
+.scroll-btn h3::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+font-family: "Font Awesome 5 Free";
+content: "f342";
+font-weight: 900;
+color: #2C3E50;
+}
+
+.btn-arw {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: .6em;
+  z-index: 1;
+  color: #2C3E50;
+}
+
+.hide {
+  opacity:0;
+}
+
+.show {
+  opacity: 1;
+}
+
+
 .hero-overlay {
   width: 100%;
   height: 100vh;
-  background-color: #FFA327;
-  mix-blend-mode:overlay;
-  opacity: .4;
+  opacity: .8;
   position: absolute;
+}
+
+
+.hero-overlay:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #2C3E50 35%, transparent) left center/100%;
 }
 
 .hero {
@@ -79,6 +132,44 @@ a:visited, a:link {
   background-size:cover;
 }
 
+.hero-cta {
+  position: absolute;
+  color: aliceblue;
+  font-family: 'roboto', sans-serif;
+  margin-left: 12rem;
+  left: 0;
+  bottom: 5em;
+  transition: all;
+}
+
+.hero-cta h1 {
+  font-size: clamp(.1rem, 4.2vw, 4rem);
+  margin-bottom: 15px;
+  margin-top: 35px;
+  color: #FFA327;
+  transition: ease 1s;
+}
+
+.hero-cta p::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+font-family: "Font Awesome 5 Free";
+content: "";
+font-weight: 900;
+color: #FFA327;
+margin-right: 12px;
+}
+
+.hero-cta p {
+  line-height: 1.5em;
+  font-size: clamp(.5rem, 4.2vw, 1.5rem);
+}
+
+
+
 .about-section {
   min-height: 850px;
   min-width: 100vw;
@@ -88,7 +179,7 @@ a:visited, a:link {
 }
 
 .about h1 {
-  font-size: clamp(2rem,4.2vw,3rem);
+  font-size: clamp(1.5rem,4.2vw,3rem);
   text-transform: uppercase;
   color: #2C3E50;
   padding-top: clamp(1.5em, 2.2vw, 2em);
@@ -124,13 +215,13 @@ hr {
 .box-1, 
 .box-2 {
   color: #2C3E50;
-  width:650px;
+  max-width:650px;
 }
 
 
 .box-1 ul, 
 .box-2 p {
-  font-size: clamp(1rem, 1.2vw, 1.5rem);
+  font-size: clamp(.6rem, 2.2vw,1.5rem);
   list-style: none;
 }
 
@@ -140,7 +231,7 @@ hr {
 
 }
 .box-1 h1 {
-  font-size: clamp(2rem,4.2vw,3rem);
+  font-size: clamp(1rem,4.2vw,3rem);
   text-transform: uppercase;
 }
 
@@ -173,7 +264,7 @@ hr {
 }
 
 .box-2 h1 {
-  font-size: clamp(2rem,4.2vw,3rem);
+  font-size: clamp(1rem,4.2vw,3rem);
   text-transform: uppercase;
 }
 
@@ -191,7 +282,6 @@ hr {
 .services {
   margin: 0 auto;
   text-align: center;
-  min-width: 100vw;
   padding-top: clamp(1.5em, 2.2vw, 2em);
   min-height: 850px;
 }
@@ -199,7 +289,7 @@ hr {
 .our-services h1 {
   max-width: 1050px;
   margin: 0 auto;
-  font-size: clamp(2.5rem,4.2vw,3rem);
+  font-size: clamp(1.5rem,4.2vw,3rem);
   text-transform: uppercase;
   color: #2C3E50;
   margin-top: 1em;
@@ -225,14 +315,14 @@ hr {
 }
 
 .pressure-col h1, .cutstack-col h1 {
-  font-size: 2.5em;
+  font-size: clamp(.5rem,4.2vw,3rem);
   text-transform: uppercase;
   color: #2C3E50;
   margin-bottom: .5em;
 }
 
 .pressure-col ul, .cutstack-col ul {
-  font-size: clamp(1rem, 2.2vw,1.5rem);
+  font-size: clamp(.5rem, 4.2vw,1.5rem);
   list-style: none;
   color:#2C3E50;
 }
@@ -256,13 +346,13 @@ hr {
 
 .pressure-col {
   height: 350px;
-  width: clamp(350px,40vw,650px);
+  width: clamp(150px,40vw,650px);
   margin-left: auto;
 }
 
 .cutstack-col {
   height: 350px;
-  width: clamp(350px,40vw,650px);
+  width: clamp(150px,40vw,650px);
   margin-right: auto;
 }
 
@@ -378,7 +468,7 @@ color: #2C3E50;
 }
 
 .contact h1 {
-  font-size: clamp(2.5rem,4.2vw,3rem);
+  font-size: clamp(.5rem,6.2vw,3rem);
   text-transform: uppercase;
   color: #FFA327;
   padding-top: 55px;
@@ -387,6 +477,7 @@ color: #2C3E50;
 
 .contact-grid {
  margin: 0 auto;
+ padding-left: 2em;
 }
 
 .contact-grid ul {
@@ -397,13 +488,13 @@ display: grid;
 grid-template-columns: repeat(4, auto);
 justify-content: center;
 align-items: center;
-font-size: clamp(.5rem,2.2vw,1rem);
+font-size: clamp(.2rem,2.2vw,1rem);
 padding-left: 2em;
 padding-right: 2em;
 }
 
 .contact-grid li {
-  font-size: 1.5em;
+  font-size: clamp(.2rem,2.2vw,1rem);
   margin-bottom: 20px;
 }
 
@@ -523,6 +614,7 @@ textarea {
   row-gap: 2em;
   align-items: baseline;
   }
+
   
 }
 
@@ -556,6 +648,12 @@ textarea {
   background-position: center;
   
 }
+
+.scroll-btn {
+  display: none;
+}
+
+
 
 .showcase {
   position: fixed;
@@ -601,6 +699,12 @@ textarea {
   color: #2C3E50;
 }
 
+.hero-cta {
+  top: 25em;
+  margin: 0;
+  text-align: center;
+}
+
 .about-section {
   min-height: 800px;
 }
@@ -613,13 +717,23 @@ textarea {
   row-gap: 4em;
 }
 
+.box-1, 
+.box-2 {
+  color: #2C3E50;
+  max-width: clamp(150px, 40vw, 250px);
+}
+
 .service-grid {
   grid-template-columns: 1fr;
   width: fit-content;
   padding-top: 4em;
   margin: 0 auto;
-  row-gap: 8em;
+  row-gap: 15em;
+  margin-bottom: 22em;
 }
 
+
+.contact-grid ul {
+  gap: 0px;
 
 }
